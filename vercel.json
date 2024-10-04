@@ -1,5 +1,3 @@
 {
-  "projectSettings": {
-    "rootDirectory": "view/home"
-  }
+  "rewrites": [{ "source": "/", "destination": "/view/home/index.html" }]
 }
