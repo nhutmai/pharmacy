@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Profile</title>
+    <script src="../../script/page/goToPage.js"></script>
+    <script src="../../script/auth/admin/displayAdminProfile.js"></script>
+    <link rel="stylesheet" href="../../style/admin/CRUDProducts.css" />
+    <link rel="stylesheet" href="../../style/admin/admin.css" />
+  </head>
+  <body>
+    <div class="" id="overlay"></div>
+    <div class="menuBar" style="height: 1095px;">
+      <div class="web-name">
+        <h1>Admin Page</h1>
+      </div>
+      <div class="btn-container">
+        <button class="active">Products</button>
+        <button onclick="goToPage('/view/admin/adminCustomer.html')">
+          Customer
+        </button>
+        <button onclick="goToPage('/view/admin/adminImage.html')">Image</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="adminProfile-container">
+        <img
+          src="../../public/adminAvatar/adminAvatar.jpg"
+          alt=""
+          id="adminAvatar"
+          width="200px"
+          height="200px"
+        />
+        <div>
+          <div id="adminName">Mai Minh Nhựt</div>
+          <div id="adminEmail">Nhutmai00@gmail</div>
+        </div>
+
+        <button onclick="goToPage('/view/admin/auth/adminLogin.html')">
+          Logout
+        </button>
+      </div>
+      <div class="main">
+        <div class="head">
+          <h2>Product List</h2>
+          <div>
+            <input
+              type="text"
+              placeholder="Search by name"
+              id="searchText"
+              oninput="search()"
+            />
+            <button onclick="activeAddProduct()">Add Product</button>
+          </div>
+        </div>
+        <table id="productTable">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Product Price</th>
+              <th>Product Unit</th>
+              <th>Category</th>
+              <th>Detail</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productList">
+            <!-- Example Product Row -->
+            <tr>
+              <td>Example Product</td>
+              <td>$50</td>
+              <td>kg</td>
+              <td>Top bán chạy</td>
+              <td>Sample description</td>
+              <td>
+                <button class="read-btn" onclick="activeReadProduct()">
+                  Read
+                </button>
+                <button class="edit-btn" onclick="activeEditProduct()">
+                  Edit
+                </button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Example Product</td>
+              <td>$50</td>
+              <td>kg</td>
+              <td>Top bán chạy</td>
+              <td>Sample description</td>
+              <td>
+                <button class="read-btn">Read</button>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Example Product</td>
+              <td>$50</td>
+              <td>kg</td>
+              <td>Top bán chạy</td>
+              <td>Sample description</td>
+              <td>
+                <button class="read-btn">Read</button>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- this will active when click addNewProduct -->
+        <div id="addNewProduct">
+          <button id="closeAddProduct" onclick="closeAddProduct()">
+            Close
+          </button>
+          <h2>Add A New Product</h2>
+          <form action="" class="">
+            <div>
+              <label for="">Product Name</label>
+              <input id="c-productName" type="text" placeholder="" />
+            </div>
+            <div>
+              <label for="productPrice">Product Price</label>
+              <input id="c-productPrice" type="text" placeholder="" />
+            </div>
+
+            <div>
+              <label for="productUnit">Product Unit</label>
+              <input type="text" name="productUnit" id="c-productUnit" />
+            </div>
+            <select name="" id="c-productCategory">
+              <option value="">select a category</option>
+              <option value="top bán chạy">top bán chạy</option>
+              <option value="Vi vu hè không sợ nắng">
+                Vi vu hè không sợ nắng
+              </option>
+              <option value="sản phẩm nổi bật">sản phẩm nổi bật</option>
+            </select>
+
+            <div>
+              <label for="productDetail">Product Detail</label>
+              <textarea
+                name="productDetail"
+                id="c-productDetail"
+                cols="1"
+                rows="3"
+              ></textarea>
+            </div>
+            <div>
+              <label for="productImage">Product Image</label>
+              <input type="file" id="c-productImage" accept="image/*" />
+            </div>
+            <button id="addProduct" onclick="addNewProduct(event)">Add</button>
+          </form>
+        </div>
+
+        <!-- this will active when click edit -->
+        <div id="editProduct">
+          <button id="closeEditProduct" onclick="closeEditProduct()">
+            Close
+          </button>
+          <h2>Update Product</h2>
+          <form action="" class="">
+            <input type="hidden" id="e-productId" />
+            <div>
+              <label for="">Product Name</label>
+              <input id="e-productName" type="text" placeholder="" />
+            </div>
+            <div>
+              <label for="productPrice">Product Price</label>
+              <input id="e-productPrice" type="text" placeholder="" />
+            </div>
+
+            <div>
+              <label for="productUnit">Product Unit</label>
+              <input type="text" name="productUnit" id="e-productUnit" />
+            </div>
+            <select name="" id="e-productCategory">
+              <option value="top bán chạy">top bán chạy</option>
+              <option value="Vi vu hè không sợ nắng">
+                Vi vu hè không sợ nắng
+              </option>
+              <option value="sản phẩm nổi bật">sản phẩm nổi bật</option>
+            </select>
+            <div>
+              <label for="productDetail">Product Detail</label>
+              <textarea
+                name="productDetail"
+                id="e-productDetail"
+                cols="1"
+                rows="3"
+              ></textarea>
+            </div>
+            <button id="addProduct" onclick="update(event)">Update</button>
+          </form>
+        </div>
+
+        <!-- this will active when click Read -->
+        <div id="readProduct">
+          <button id="closeEditProduct" onclick="closeReadProduct()">
+            Close
+          </button>
+          <h2>Product information</h2>
+          <form action="" class="">
+            <div>
+              <label for="">Product Name</label>
+              <input id="r-productName" type="text" placeholder="" />
+            </div>
+            <div>
+              <label for="productPrice">Product Price</label>
+              <input id="r-productPrice" type="text" placeholder="" />
+            </div>
+
+            <div>
+              <label for="productUnit">Product Unit</label>
+              <input type="text" name="productUnit" id="r-productUnit" />
+            </div>
+            <select name="" id="r-productCategory">
+              <option value="top bán chạy">top bán chạy</option>
+              <option value="Vi vu hè không sợ nắng">
+                Vi vu hè không sợ nắng
+              </option>
+              <option value="sản phẩm nổi bật">sản phẩm nổi bật</option>
+            </select>
+            <div>
+              <label for="detail">Product Detail</label>
+              <textarea
+                name="detail"
+                id="r-productDetail"
+                cols="1"
+                rows="3"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../../script/productScript/productCRUD.js"></script>
+    <script src="../../script/productScript/createProduct.js"></script>
+    <script src="../../script/productScript/updateProduct.js"></script>
+    <script src="../../script/productScript/readProduct.js"></script>
+    <script src="../../script/productScript/deleteProduct.js"></script>
+  </body>
+</html>

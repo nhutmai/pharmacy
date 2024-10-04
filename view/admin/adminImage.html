@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Profile</title>
+    <script src="../../script/page/goToPage.js"></script>
+    <script src="../../script/auth/admin/displayAdminProfile.js"></script>
+    <link rel="stylesheet" href="../../style/admin/image.css" />
+    <link rel="stylesheet" href="../../style/admin/admin.css" />
+  </head>
+  <body>
+    <div class="" id="overlay"></div>
+    <div id="viewImage-container">
+      <img src="" alt="" id="viewImage" />
+      <div id="x" onclick="closeViewImage()">X</div>
+    </div>
+    <div id="crudImage">
+      <button id="closeCrud" onclick="closeCrud()">Close</button>
+      <input type="hidden" id="productIndex" />
+      <h2 id="productName">Sản phẩm a</h2>
+      <h4>Upload New Image</h4>
+      <input type="file" id="imageUpload" accept="image/*" placeholder="add" />
+      <div class="table-container">
+        <table id="imagesTable">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="images"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="menuBar" style="height: 2245px;">
+      <div class="web-name">
+        <h1>Admin Page</h1>
+      </div>
+      <div class="btn-container">
+        <button onclick="goToPage('/view/admin/adminHome.html')">
+          Products
+        </button>
+        <button onclick="goToPage('/view/admin/adminCustomer.html')">
+          Customer
+        </button>
+        <button class="active">Image</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="adminProfile-container">
+        <img
+          src="../../public/adminAvatar/adminAvatar.jpg"
+          alt=""
+          id="adminAvatar"
+          width="200px"
+          height="200px"
+        />
+        <div>
+          <div id="adminName">Mai Minh Nhựt</div>
+          <div id="adminEmail">Nhutmai00@gmail</div>
+        </div>
+
+        <button onclick="goToPage('/view/admin/auth/adminLogin.html')">
+          Logout
+        </button>
+      </div>
+      <div class="main">
+        <div class="head">
+          <h2>Product Image Manage</h2>
+          <div>
+            <input
+              type="text"
+              placeholder="Search by name"
+              id="searchText"
+              oninput="search()"
+            />
+          </div>
+        </div>
+        <table id="imageTable">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Product Name</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tbody id="imageList">
+            <tr>
+              <td>1</td>
+              <td>san pham</td>
+              <td>
+                <img
+                  src="../../public/productImage/adminAvatar.jpg"
+                  alt=""
+                  width="80px"
+                  id="adminAvatar.jpg"
+                  onclick="viewImage(this)"
+                />
+                <img
+                  src="/public/productImage/adminAvatar.jpg"
+                  alt=""
+                  width="80px"
+                />
+                <img
+                  src="../../public/productImage/adminAvatar.jpg"
+                  alt=""
+                  width="80px"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>san pham</td>
+              <td>
+                <img
+                  src="../../public/productImage/adminAvatar.jpg"
+                  alt=""
+                  width="80px"
+                />
+                <img
+                  src="../../public/productImage/adminAvatar.jpg"
+                  alt=""
+                  width="80px"
+                />
+                <img
+                  src="../../public/productImage/adminAvatar.jpg"
+                  alt=""
+                  width="80px"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../script/productImageScript/viewImage.js"></script>
+    <script src="../../script/productImageScript/displayProductImage.js"></script>
+    <script src="../../script/productImageScript/displayImageList.js"></script>
+    <script src="../../script/productImageScript/addNewImage.js"></script>
+    <script src="../../script/productImageScript/deleteImage.js"></script>
+    <script src="../../script/productImageScript/search.js"></script>
+  </body>
+</html>

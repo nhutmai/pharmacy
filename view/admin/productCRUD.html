@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product CRUD</title>
+    <link rel="stylesheet" href="../../style/style.css" />
+
+    <script src="../../script/productScript/createProduct.js"></script>
+    <script src="../../script/productScript/deleteProduct.js"></script>
+    <script src="../../script/productScript/readProduct.js"></script>
+    <script src="../../script/productScript/updateProduct.js"></script>
+    <script src="../../script/page/goToPage.js"></script>
+    <script src="../../script/page/search-filterProduct.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Form to create or update a product -->
+      <form id="productForm" onsubmit="event.preventDefault();">
+        <input type="hidden" id="productId" />
+        <div>
+          <label for="productName">Product Name:</label>
+          <input type="text" id="productName" required />
+        </div>
+        <div>
+          <label for="productPrice">Product Price:</label>
+          <input type="number" id="productPrice" step="0.01" required />
+        </div>
+        <div>
+          <label for="productCategory">Product Category:</label>
+          <input type="text" id="productCategory" required />
+        </div>
+        <button type="button" onclick="createProduct()">Create Product</button>
+        <button
+          type="button"
+          id="updateButton"
+          onclick="updateProduct(document.getElementById('productId').value)"
+          style="display: none"
+        >
+          Update Product
+        </button>
+      </form>
+
+      <hr />
+
+      <!-- Section to display product list -->
+      <h3>Product List</h3>
+
+      <!-- Link to external JavaScript file -->
+      <script src="../../script/productScript/productCRUD.js"></script>
+    </div>
+  </body>
+</html>

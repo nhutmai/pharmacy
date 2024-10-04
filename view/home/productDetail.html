@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../../style/style.css">
+    <script src="../../script/page/search-filterProduct.js"></script>
+    <script src="../../script/page/goToPage.js"></script>
+    <script src="../../script/cartScript/addToCart.js"></script>
+    <script src="../../script/page/initPageDetailProduct.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="top-banner" >
+        <div class="custom-img">
+            <img src="../../img/a.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="container-navbar">
+        <div class="container">
+            <header class="navbar">
+                <div class="navbar-left">
+                    <a href="#" onclick="goToPage('/view/home/index.html#')" style="text-decoration: none;"><h1 class="logo">NHÀ THUỐC<br><span>CỦA TÔI</span></h1></a>
+                </div>
+                <div class="navbar-center">
+                    <input type="text" placeholder="Search...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+                </div>
+                <div class="navbar-right">
+                    <a href="#" style="color: black;" onclick="goToPage('/view/customer/customerCheckout.html')"><i class="fa-solid fa-bag-shopping fa-2xl" style="padding-right: 50px;"></i></a>
+                    <div class="vertical-line" style="margin-right: 50px;"></div>
+                    <a href="#" onclick="goToPage('../customer/auth/userLogin.html')"><button class="login-btn"><i class="fa-solid fa-user fa-xl" style="padding-right: 8px;" ></i>Đăng nhập/ Đăng ký</button></a>
+                </div>
+            </header>
+            <nav class="navbar-menu">
+                <ul>
+                    <li>THỰC PHẨM CHỨC NĂNG &#9660;</li>
+                    <li>THIẾT BỊ, DỤNG CỤ Y TẾ &#9660;</li>
+                    <li>DƯỢC MỸ PHẨM &#9660;</li>
+                    <li>CHĂM SÓC CÁ NHÂN &#9660;</li>
+                    <li>GÓC SỨC KHỎE &#9660;</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container" style="width: 1550px;">
+        <div class="product-container" id="product-detail">
+            <div class="product-image" style="width: 880px;">
+                <div id="product-image">
+                <!-- <img src="../../img/anessa-milk.jpg" alt="Serum Balance Vitamin C" /> -->
+                </div>
+                <div class="image-thumbnails">
+                    <button>Xem tất cả hình</button>
+                </div>
+                <div>
+                    <h2>Thông tin sản phẩm</h2>
+                    <h3>1. Thành phần</h3>
+                    <p>
+                        Mỗi viên nén Panadol Extra chứa:<br><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Hoạt chất: Paracetamol 500mg, Caffeine 65mg.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Tá dược: Pregelatinised starch, Maize starch, Povidone, Potassium Sorbate,Talc, Stearic acid, Croscarmellose sodium.
+                    </p>
+                    
+                    <div id="detail-product">
+
+                    </div>
+                    <div class="image-thumbnails" id="thumbnails">
+                        <button onclick="ProductsDetail()">Xem thêm</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="product-details">
+                <div class="product-price" id="product-price">
+                    
+                </div>
+                
+                <div class="promo-info">
+                    <p>Khuyến mãi (Đến 31/08):</p>
+                    <ul>
+                        <img src="../../img/banner.jpg" alt="" style="width: 550px; height: 120px;">
+                    </ul>
+                </div>
+                <div class="contact-info">
+                    <p>Gọi ngay tư vấn với dược sĩ <strong>1900 1572</strong></p>
+                </div>
+                <table class="product-info-table">
+                    <tr>
+                        <td><b>Công dụng</b></td>
+                        <td>Hạ sốt, giảm đau.</td>
+                    </tr>
+                    <tr class="product-info-table-tr">
+                        <td><b>Thương hiệu</b></td>
+                        <td>
+                            GlaxoSmithKline (gsk) (Anh) 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Nhà sản xuất<b></td>
+                        <td>Sanofi.</td>
+                    </tr>
+                    <tr class="product-info-table-tr">
+                        <td><b>Nơi sản xuất</b></td>
+                        <td>
+                            Việt Nam</td>
+                    </tr>
+                    <tr>
+                        <td><b>Cách đóng gói</b></td>
+                        <td>15 vỉ x 12 viên</td>
+                    </tr>
+                    <tr class="product-info-table-tr">
+                        <td><b>Thành phần chính</b></td>
+                        <td>Cafein, Paracetamol</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="container">
+    
+        <footer class="footer">
+            <p>&copy; 2024 Our E-Commerce Platform. All rights reserved.</p>
+        </footer>
+    </div>
+
+    
+
+    
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+#imageTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#imageTable th,
+#imageTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#imageTable th {
+  background-color: #f4f4f4;
+}
+
+.table-container {
+  max-height: 80%;
+  overflow-y: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+#imagesTable {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#imagesTable th,
+#imagesTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+#imagesTable th {
+  background-color: #f4f4f4;
+}
+
+#overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: black;
+  opacity: 0.5;
+}
+
+/* view image */
+#viewImage-container {
+  display: block;
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  width: 0%;
+  height: 0%;
+  z-index: 20;
+  transition: all 0.3s ease-in;
+}
+.show {
+  width: 60% !important;
+  height: 60% !important;
+}
+
+#viewImage-container img {
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#x {
+  display: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  position: absolute;
+  font-weight: bolder;
+  font-size: 25px;
+  top: 7px;
+  right: 10px;
+}
+#x:hover {
+  transform: scale(1.1);
+}
+
+#crudImage {
+  display: none;
+  position: fixed;
+  padding: 20px;
+  width: 0%;
+  height: 0%;
+  z-index: 20;
+  top: 10%;
+  left: 20%;
+  background-color: #f4f4f4;
+  transition: all 1s ease-in;
+}
+#crudImage .addNew-btn {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #4c74af;
+  color: white;
+  border-radius: 5px;
+}
+#crudImage #addNew-btn:hover {
+  background-color: #324d77;
+}
+
+.crudShow {
+  width: 60% !important;
+  height: 75% !important;
+}
+#closeCrud {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.table-container {
+  max-height: 80%;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+}
+#editImage-btn {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+}
+
+input,
+button,
+select {
+  padding: 5px 10px;
+}

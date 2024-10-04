@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <link rel="stylesheet" href="../../style/cart.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="../../script/page/goToPage.js"></script>
+</head>
+<body>
+    <div class="top-banner" >
+        <div class="custom-img">
+            <img src="../../img/a.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="container-navbar">
+        <div class="container">
+            <header class="navbar">
+                <div class="navbar-left">
+                    <a href="#" onclick="goToPage('/view/home/index.html#')" style="text-decoration: none;"><h1 class="logo">NHÀ THUỐC<br><span>CỦA TÔI</span></h1></a>
+                </div>
+                <div class="navbar-center">
+                    <input type="text" placeholder="Search...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+                </div>
+                <div class="navbar-right">
+                    <a href="#" style="color: black;" onclick="goToPage('/view/customer/customerCheckout.html')"><i class="fa-solid fa-bag-shopping fa-2xl" style="padding-right: 50px;"></i></a>
+                    <div class="vertical-line" style="margin-right: 50px;"></div>
+                    <a href="#" onclick="goToPage('../customer/auth/userLogin.html')"><button class="login-btn"><i class="fa-solid fa-user fa-xl" style="padding-right: 8px;" ></i>Đăng nhập/ Đăng ký</button></a>
+                </div>
+            </header>
+            <nav class="navbar-menu">
+                <ul>
+                    <li>THỰC PHẨM CHỨC NĂNG &#9660;</li>
+                    <li>THIẾT BỊ, DỤNG CỤ Y TẾ &#9660;</li>
+                    <li>DƯỢC MỸ PHẨM &#9660;</li>
+                    <li>CHĂM SÓC CÁ NHÂN &#9660;</li>
+                    <li>GÓC SỨC KHỎE &#9660;</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-1">  
+        <div class="order-items">
+            <!-- Các mặt hàng sẽ được chèn vào đây bởi JavaScript -->
+        </div>
+    
+        <div class="customer-info">
+            <p><strong>Thông tin khách hàng:</strong></p>
+            <p id="customer-name">Đang tải thông tin...</p>
+            <p>Số điện thoại: 0868988143</p>
+            <!-- <p id="address">Địa chỉ: Đang tải...</p> -->
+        </div>
+    
+        <div class="delivery-info">
+            <h4>Chọn cách thức nhận hàng:</h4>
+            <div>
+                <input type="radio" id="delivery" name="delivery" checked>
+                <label for="delivery">Giao tận nơi</label>
+                <input type="radio" id="pickup" name="delivery">
+                <label for="pickup">Nhận tại nhà thuốc</label>
+            </div>
+            <p><strong>Địa chỉ:</strong> <span id="address">184 Lê Đại Hành, phường 15, quận 11, TP Hồ Chí Minh</span></p>
+            <a href="" style="color: #86DE16;text-decoration: none;">Thêm địa chỉ khác</a>
+        
+            <div class="delivery-details" id="delivery-details">
+                <div class="delivery-option">
+                    <input type="checkbox" id="fast-delivery">
+                    <label for="fast-delivery">Giao siêu nhanh</label>
+                </div>
+                <!-- <div class="time-selector hidden">
+                    <label for="flexible-time">Chọn thời gian giao hàng:</label>
+                    <input type="time" id="flexible-time">
+                </div> -->
+                <p>Sản phẩm được giao qua đối tác: Giao hàng tiết kiệm</p>
+            </div>
+            
+            <div class="note-section">
+                <textarea id="note" rows="4" placeholder="Ghi chú thêm..."></textarea>
+            </div>
+        </div>        
+    
+        <div class="coupon-section">
+            <input type="text" id="coupon" placeholder="Nhập mã giảm giá...">
+            <button id="apply-coupon">Áp dụng</button>
+        </div>
+    
+        <div class="summary">
+            <div class="delivery-fee">
+                <span>Phí giao hàng:</span>
+                <span id="delivery-fee">0đ</span>
+            </div>
+            <div class="total-amount">
+                <span>Tổng tiền:</span>
+                <span id="total-amount">0đ</span>
+            </div>
+        </div>
+        <div class="order"><button id="place-order" style="font-size: 20px;" onclick="goToPage('/view/customer/pay.html')">Đặt Hàng</button></div>
+    </div>    
+
+    <script src="../../script/paymentScript/loadCart.js"></script> 
+</body>
+</html>

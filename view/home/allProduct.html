@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../../style/style.css">
+    <script src="../../script/page/search-filterProduct.js"></script>
+    <script src="../../script/page/goToPage.js"></script>
+    <script src="../../script/cartScript/addToCart.js"></script>
+    <script src="../../script/page/initPageAllProduct.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="top-banner" >
+        <div class="custom-img">
+            <img src="../../img/a.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="container-navbar">
+        <div class="container">
+            <header class="navbar">
+                <div class="navbar-left">
+                    <a href="#" onclick="goToPage('/view/home/index.html#')" style="text-decoration: none;"><h1 class="logo">NHÀ THUỐC<br><span>CỦA TÔI</span></h1></a>
+                </div>
+                <div class="navbar-center">
+                    <input type="text" placeholder="Search...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+                </div>
+                <div class="navbar-right">
+                    <a href="#" style="color: black;" onclick="goToPage('/view/customer/customerCheckout.html')"><i class="fa-solid fa-bag-shopping fa-2xl" style="padding-right: 50px;"></i></a>
+                    <div class="vertical-line" style="margin-right: 50px;"></div>
+                    <a href="#" onclick="goToPage('../customer/auth/userLogin.html')"><button class="login-btn"><i class="fa-solid fa-user fa-xl" style="padding-right: 8px;" ></i>Đăng nhập/ Đăng ký</button></a>
+                </div>
+            </header>
+            <nav class="navbar-menu">
+                <ul>
+                    <li>THỰC PHẨM CHỨC NĂNG &#9660;</li>
+                    <li>THIẾT BỊ, DỤNG CỤ Y TẾ &#9660;</li>
+                    <li>DƯỢC MỸ PHẨM &#9660;</li>
+                    <li>CHĂM SÓC CÁ NHÂN &#9660;</li>
+                    <li>GÓC SỨC KHỎE &#9660;</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div style=" display: flex; justify-content: center; align-items: center;">
+        <a href=""><img src="../../img/banner.jpg" alt="" style="width: 1920px;"></a>
+    </div>
+
+    <div class="container">
+
+        <div class="mid-banner">
+            <a href="#" onclick="goToPage('../customer/auth/userLogin.html')"><img src="../../img/canhan1.jpg" alt=""></a>
+            
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>All Product</h2>
+                <!-- <a href="#">Xem thêm</a> -->
+            </div>
+            <!-- search & filter section -->
+            <section class="search-filter">
+                <input type="text" id="searchInput" placeholder="Search product..." oninput="searchProducts(this.value)">
+                <select name="" id="categoryFilter" onchange="filterProducts(getFilterCriteria())">
+                    <option value="">All Category</option>
+                    <option value="top bán chạy">Top bán chạy</option>
+                    <option value="Vi vu hè không sợ nắng">Kem chống nắng</option>
+                    <option value="sản phẩm nổi bật">Sản phẩm nổi bật</option>
+                </select>
+                <input type="number" id="minPrice" placeholder="minPrice" onchange="filterProducts(getFilterCriteria())">
+                <input type="number" id="maxPrice" placeholder="maxPrice" onchange="filterProducts(getFilterCriteria())">
+            </section>
+    
+            <section class="product-grid" id="productContainer-4">
+                <!-- Example Product Item -->
+            </section>
+    
+        </div>
+        <footer class="footer">
+            <p>&copy; 2024 Our E-Commerce Platform. All rights reserved.</p>
+        </footer>
+    </div>
+
+    
+
+    
+
+</body>
+</html>

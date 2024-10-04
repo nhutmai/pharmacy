@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Profile</title>
+    <script src="../../script/page/goToPage.js"></script>
+    <script src="../../script/auth/admin/displayAdminProfile.js"></script>
+    <link rel="stylesheet" href="../../style/admin/customer.css" />
+    <link rel="stylesheet" href="../../style/admin/admin.css" />
+  </head>
+  <body>
+    <div class="" id="overlay"></div>
+
+    <div class="menuBar">
+      <div class="web-name">
+        <h1>Admin Page</h1>
+      </div>
+      <div class="btn-container">
+        <button onclick="goToPage('/view/admin/adminHome.html')">
+          Products
+        </button>
+        <button class="active">Customer</button>
+        <button onclick="goToPage('/view/admin/adminImage.html')">Image</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="adminProfile-container">
+        <img
+          src="../../public/adminAvatar/adminAvatar.jpg"
+          alt=""
+          id="adminAvatar"
+          width="200px"
+          height="200px"
+        />
+        <div>
+          <div id="adminName">Mai Minh Nhựt</div>
+          <div id="adminEmail">Nhutmai00@gmail</div>
+        </div>
+
+        <button onclick="goToPage('/view/admin/auth/adminLogin.html')">
+          Logout
+        </button>
+      </div>
+      <div class="main">
+        <div class="head">
+          <h2>Customer List</h2>
+          <div>
+            <input
+              type="text"
+              placeholder="Search by name"
+              id="searchText"
+              oninput="search()"
+            />
+          </div>
+        </div>
+        <table id="userTable">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Customer Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody id="userList">
+            <tr>
+              <td>1</td>
+              <td>Mai Minh Nhựt</td>
+              <td>nhutmai00@gmail.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../../script/userScript/displayUser.js"></script>
+    <script src="../../script/userScript/searchUser.js"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #D9FCFC;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #4c9daf;
+}
+
+.order-success i {
+    font-size: 1rem;
+    color: #4c9daf;
+    margin-right: 10px; 
+}
+
+.order-success h2 {
+    color: #333;
+    margin: 0; 
+}
+
+
+.order-summary h2 {
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+    color: #000000;
+}
+
+.order-summary p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.order-summary h3 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.order-items {
+    margin-top: 10px;
+}
+
+.order-items .item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-items .item p {
+    margin: 5px 0;
+}
+
+.payment-info {
+    margin-top: 30px;
+}
+
+.payment-info h2 {
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+    color: #000000;
+}
+
+.payment-info label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.payment-info input[type="radio"] {
+    margin-right: 10px;
+}
+
+#confirm-payment {
+    background-color: #00c9b7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#confirm-payment:hover {
+    background-color: #6bdddd;
+}
+
+@media print {
+    body {
+        background-color: #fff;
+        margin: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #confirm-payment {
+        display: none;
+    }
+}
